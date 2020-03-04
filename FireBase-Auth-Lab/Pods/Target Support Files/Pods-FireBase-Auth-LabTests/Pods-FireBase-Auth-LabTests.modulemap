@@ -1,0 +1,6 @@
+framework module Pods_FireBase_Auth_LabTests {
+  umbrella header "Pods-FireBase-Auth-LabTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
