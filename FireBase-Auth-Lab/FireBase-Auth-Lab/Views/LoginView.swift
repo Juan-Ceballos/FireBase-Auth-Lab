@@ -56,6 +56,14 @@ class LoginView: UIView {
         return button
     }()
     
+    public lazy var errorLabel: UILabel =   {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = ""
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -67,16 +75,27 @@ class LoginView: UIView {
     }
     
     private func commonInit()   {
-        setupProfileSigninStackView()
+        setupProfileSigninStackViewConstraints()
+        setupErrorLabelConstraints()
     }
     
-    private func setupProfileSigninStackView()  {
+    private func setupProfileSigninStackViewConstraints()  {
         addSubview(profileSignInStackView)
         profileSignInStackView.snp.makeConstraints { (make) in
             make.left.equalTo(self).inset(8)
             make.right.equalTo(self).inset(-8)
             make.height.equalTo(self).multipliedBy(0.14)
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(40)
+        }
+    }
+    
+    private func setupErrorLabelConstraints()   {
+        addSubview(errorLabel)
+        errorLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(profileSignInStackView.snp.bottom).offset(8)
+            make.left.equalTo(self.snp.left).offset(8)
+            make.right.equalTo(self.snp.right).inset(8)
+            make.bottom.equalTo(self.snp.bottom)
         }
     }
     

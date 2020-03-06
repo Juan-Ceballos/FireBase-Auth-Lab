@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     private let loginView = LoginView()
     
     private var accountState: AccountState = .newUser
+    private var authSession = AuthenticationSession()
     
     override func loadView()  {
         view = loginView
@@ -37,12 +38,27 @@ class LoginViewController: UIViewController {
             else    {
                 print("missing fields")
                 return
-        }
-        
+            }
+        continueLoginFlow(email: email, password: password)
     }
     
     private func continueLoginFlow(email: String, password: String)    {
-        
+        if accountState == .existingUser    {
+            authSession.signinExistingUser(email: email, password: password) { (result) in
+                switch result   {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.loginView.errorLabel.text = "\(error.localizedDescription)"
+                        self.loginView.errorLabel.textColor = .red
+                    }
+                case .success(let authResult):
+                    print("success")
+                }
+            }
+        }
+        else    {
+            
+        }
     }
     
     @objc private func toggleUserStateButtonPressed()   {
