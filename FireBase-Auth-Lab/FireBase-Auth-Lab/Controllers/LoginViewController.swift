@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
                         self.loginView.errorLabel.textColor = .red
                     }
                 case .success(let authResult):
-                    print("success")
+                    
                 }
             }
         }
