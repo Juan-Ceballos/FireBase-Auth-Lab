@@ -6,6 +6,9 @@ target 'FireBase-Auth-Lab' do
   use_frameworks!
 
   # Pods for FireBase-Auth-Lab
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'SnapKit'
 
   target 'FireBase-Auth-LabTests' do
     inherit! :search_paths
