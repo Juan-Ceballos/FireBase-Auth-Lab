@@ -45,35 +45,39 @@ class LoginViewController: UIViewController {
     
     private func continueLoginFlow(email: String, password: String)    {
         if accountState == .existingUser    {
-            authSession.signinExistingUser(email: email, password: password) { (result) in
+            authSession.signinExistingUser(email: email, password: password) { [weak self] (result) in
                 switch result   {
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self.loginView.errorLabel.text = "\(error.localizedDescription)"
-                        self.loginView.errorLabel.textColor = .red
+                        self?.loginView.errorLabel.text = "\(error.localizedDescription)"
+                        self?.loginView.errorLabel.textColor = .red
                     }
                 case .success(let authResult):
                     DispatchQueue.main.async {
-                        self.navigationController?.pushViewController(self.profileVC, animated: false)
+                        self?.navigateToProfileView()
                     }
                 }
             }
         }
         else    {
-            authSession.createNewUser(email: email, password: password) { (result) in
+            authSession.createNewUser(email: email, password: password) { [weak self] (result) in
                 switch result   {
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self.loginView.errorLabel.text = ""
-                        self.loginView.errorLabel.textColor = .red
+                        self?.loginView.errorLabel.text = ""
+                        self?.loginView.errorLabel.textColor = .red
                     }
                 case .success(let authResult):
                     DispatchQueue.main.async {
-                        self.navigationController?.pushViewController(self.profileVC, animated: false)
+                        self?.navigateToProfileView()
                     }
                 }
             }
         }
+    }
+    
+    private func navigateToProfileView()    {
+        UIViewController.showViewController(viewController: profileVC)
     }
     
     @objc private func toggleUserStateButtonPressed()   {

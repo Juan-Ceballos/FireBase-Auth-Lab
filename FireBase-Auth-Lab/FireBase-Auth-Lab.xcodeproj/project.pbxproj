@@ -20,6 +20,7 @@
 		3E4DFF272411BB3E00FFC3E1 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4DFF262411BB3E00FFC3E1 /* AuthenticationSession.swift */; };
 		3E4DFF292412910900FFC3E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4DFF282412910900FFC3E1 /* ProfileViewController.swift */; };
 		3E4DFF2B2412915A00FFC3E1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4DFF2A2412915A00FFC3E1 /* ProfileView.swift */; };
+		3E4DFF2D241572A900FFC3E1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4DFF2C241572A900FFC3E1 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		3E4DFF262411BB3E00FFC3E1 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		3E4DFF282412910900FFC3E1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3E4DFF2A2412915A00FFC3E1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3E4DFF2C241572A900FFC3E1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		63952CBA57517BB9E85C6A40 /* Pods-FireBase-Auth-LabTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBase-Auth-LabTests.debug.xcconfig"; path = "Target Support Files/Pods-FireBase-Auth-LabTests/Pods-FireBase-Auth-LabTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8B9791B85BA6087D2FD653 /* Pods-FireBase-Auth-Lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBase-Auth-Lab.debug.xcconfig"; path = "Target Support Files/Pods-FireBase-Auth-Lab/Pods-FireBase-Auth-Lab.debug.xcconfig"; sourceTree = "<group>"; };
 		C3AE48D98327F4503CABB37B /* Pods-FireBase-Auth-Lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBase-Auth-Lab.release.xcconfig"; path = "Target Support Files/Pods-FireBase-Auth-Lab/Pods-FireBase-Auth-Lab.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				3E4DFEFA240F3A2400FFC3E1 /* LoginViewController.swift */,
 				3E4DFF282412910900FFC3E1 /* ProfileViewController.swift */,
+				3E4DFF2C241572A900FFC3E1 /* UIViewController+Extensions.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				3E4DFEFB240F3A2400FFC3E1 /* LoginViewController.swift in Sources */,
 				3E4DFEF7240F3A2400FFC3E1 /* AppDelegate.swift in Sources */,
 				3E4DFF242411BA8400FFC3E1 /* LoginView.swift in Sources */,
+				3E4DFF2D241572A900FFC3E1 /* UIViewController+Extensions.swift in Sources */,
 				3E4DFF272411BB3E00FFC3E1 /* AuthenticationSession.swift in Sources */,
 				3E4DFF2B2412915A00FFC3E1 /* ProfileView.swift in Sources */,
 				3E4DFEF9240F3A2400FFC3E1 /* SceneDelegate.swift in Sources */,
