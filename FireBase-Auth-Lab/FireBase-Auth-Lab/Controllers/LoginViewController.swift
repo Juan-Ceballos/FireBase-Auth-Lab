@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     
     private var accountState: AccountState = .newUser
     private var authSession = AuthenticationSession()
+    private let profileVC = ProfileViewController()
     
     override func loadView()  {
         view = loginView
@@ -52,25 +53,39 @@ class LoginViewController: UIViewController {
                         self.loginView.errorLabel.textColor = .red
                     }
                 case .success(let authResult):
-                    
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(self.profileVC, animated: false)
+                    }
                 }
             }
         }
         else    {
-            
+            authSession.createNewUser(email: email, password: password) { (result) in
+                switch result   {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.loginView.errorLabel.text = ""
+                        self.loginView.errorLabel.textColor = .red
+                    }
+                case .success(let authResult):
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(self.profileVC, animated: false)
+                    }
+                }
+            }
         }
     }
     
     @objc private func toggleUserStateButtonPressed()   {
-        accountState = accountState == .existingUser ? .newUser : .existingUser
+        accountState = accountState == .newUser ? .existingUser : .newUser
         
         if accountState == .existingUser {
-            loginView.signinButton.setTitle("Sign Up", for: .normal)
-            loginView.toggleUserStateButton.setTitle("Already User? Click Here", for: .normal)
-        }
-        else if accountState == .newUser    {
             loginView.signinButton.setTitle("Login", for: .normal)
             loginView.toggleUserStateButton.setTitle("New User? Click Here", for: .normal)
+        }
+        else if accountState == .newUser    {
+            loginView.signinButton.setTitle("Sign Up", for: .normal)
+            loginView.toggleUserStateButton.setTitle("Already User? Click Here", for: .normal)
         }
     }
     

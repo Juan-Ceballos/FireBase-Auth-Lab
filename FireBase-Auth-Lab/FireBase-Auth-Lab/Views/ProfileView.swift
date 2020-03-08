@@ -32,7 +32,6 @@ class ProfileView: UIView {
     }()
     
     
-    
     override init(frame: CGRect)    {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -46,7 +45,5 @@ class ProfileView: UIView {
     private func commonInit()   {
         
     }
-    
-    
     
 }

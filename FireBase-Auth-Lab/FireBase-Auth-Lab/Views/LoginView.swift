@@ -43,7 +43,7 @@ class LoginView: UIView {
     
     public lazy var signinButton: UIButton =   {
         let button = UIButton()
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.black, for: .normal)
         return button
     }()
